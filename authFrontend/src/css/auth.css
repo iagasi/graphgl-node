@@ -1,0 +1,71 @@
+.auth__container {
+    background-color: rgb(230, 228, 228);
+    height: 100vh;
+    display: flex;
+    place-content: center;
+}
+
+.auth__form {
+    position: relative;
+    background-color: white;
+    text-align: center;
+    width: 400px;
+    height: 400px;
+    margin: auto auto;
+    display: flex;
+    flex-direction: column;
+
+    padding: 15px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.auth__formContainer {
+    margin-top: 50px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+}
+
+.auth__input {
+    background-color: rgb(221, 223, 223);
+    outline: none;
+    border: none;
+    height: 50px;
+    border-radius: 8px;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.auth__button {
+    border: none;
+    height: 40px;
+    background-color: rgb(60, 101, 236);
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 5px;
+    font-size: 20px;
+    color: azure;
+    cursor: pointer;
+}
+
+.auth__buttonRegister {
+    background-color: rgb(58, 236, 177);
+    width: 60%;
+}
+
+
+.auth__errors {
+    text-align: center;
+    margin-top: 30px;
+    left: 0px;
+    right: 0px;
+    height: 60px;
+    width: 100%;
+    position: absolute;
+    color: red;
+    font-size: 20px;
+    top: 20px;
+}
