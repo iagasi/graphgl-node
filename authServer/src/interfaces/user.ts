@@ -18,7 +18,12 @@ export interface IUser {
 
 
   import { Request ,Response} from 'express';
-  export interface IContext{
+  export interface IContext {
     req:Request,
-    res:Response
+    res:Response,
+   
+  }
+
+  export  interface ICustomRequest extends Request{
+ ISAUTH:boolean
   }

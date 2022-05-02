@@ -64,7 +64,6 @@ class AuthService {
             }
             else {
                 const compare = yield bcrypt.compare(password, user.password);
-                console.log(compare);
                 if (compare) {
                     const tokens = TokenService_1.default.generateTokens(user);
                     user.loginTimes += 1;

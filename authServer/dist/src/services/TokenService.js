@@ -36,8 +36,6 @@ class TokenService {
         }
         if (!this.validateToken(acessToken)) {
             const foundToken = userdb_1.userDb.find(user => user.refreshToken == refreshToken);
-            console.log(refreshToken);
-            console.log(userdb_1.userDb[0]);
             if (!foundToken) {
                 throw new Error("Refresh token not Found");
             }

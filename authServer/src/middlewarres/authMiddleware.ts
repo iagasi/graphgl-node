@@ -1,8 +1,9 @@
 import { Request ,Response} from 'express';
+import { ICustomRequest } from '../interfaces/user';
 import TokenService from '../services/TokenService';
 
 
-const authMiddleware=(req:Request,res:Response,next:any):void=>{
+const authMiddleware=(req:ICustomRequest,res:Response,next:any):void=>{
    
         
 
@@ -20,7 +21,7 @@ const isAuthorized=TokenService.guard(acessToken,cookie)
 }
 
 catch(error){
-    console.log(error);
+    
     
 req.ISAUTH=false
 }

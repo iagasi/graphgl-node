@@ -18,7 +18,7 @@ export const resolvers = {
               return UserService.getAllUsers()
 
       }
-      console.log("getAll");
+      
 
     }
   },
@@ -33,7 +33,7 @@ export const resolvers = {
 
     },
     userLogin: (parent: any, args: any, context: IContext) => {
-      console.log("userlogin");
+      
       return AuthService.login(args.input, context)
     }
   },

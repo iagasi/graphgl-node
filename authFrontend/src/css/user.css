@@ -44,3 +44,14 @@ position: relative;
     color: rgb(67, 117, 63);
    
 }
+
+.user__container button{
+    height: 30px;
+    width: 40%;
+    background-color: blueviolet;
+    font-size: 22px;
+    border: none;
+    color: beige;
+    border-radius: 5px;
+    margin: 0 auto;
+}

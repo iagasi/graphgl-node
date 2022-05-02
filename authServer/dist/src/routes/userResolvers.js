@@ -24,7 +24,6 @@ exports.resolvers = {
             if (context.req.ISAUTH) {
                 return UserService_1.default.getAllUsers();
             }
-            console.log("getAll");
         }
     },
     Mutation: {
@@ -37,7 +36,6 @@ exports.resolvers = {
             return candidate;
         }),
         userLogin: (parent, args, context) => {
-            console.log("userlogin");
             return AuthService_1.default.login(args.input, context);
         }
     },

@@ -47,17 +47,22 @@ useEffect(()=>{
     nav("/")
   }
 
-  // if (loading) return 'Loading...';
-  // if (error) return `Error! ${error.message}`;
+  if (loading) return 'Loading...';
+  if (error) return `Error! ${error.message}`;
 
   return (
     <div className="user">
       <div className='user__container'>
         <h4>Hello - {user.state?.email}</h4>
-        <button onClick={logOutHandler}>Log out;</button>
+        <button onClick={logOutHandler}>Log out</button>
         <div className='user__counter'>
-          <h2>Your login times -<span style={{color:"red",fontSize:"30px"}}> {user.state?.loginTimes}</span></h2>
-          <h1>{ counter===3&&"You are lucky person"}</h1>
+        {
+user.state?.loginTimes==1?<h2>Welcome-<span style={{color:"red",fontSize:"30px"}}> </span></h2>
+
+:<h2>It is your  <span style={{color:"red",fontSize:"30px"}}> {user.state?.loginTimes}</span> th login</h2>
+
+        }  
+          <h1>{ counter===4&&"You are lucky person"}</h1>
 
           <h2>Registered Users-- <span span style={{color:"red" ,fontSize:"30px"}}>{counter}</span></h2>
         </div>

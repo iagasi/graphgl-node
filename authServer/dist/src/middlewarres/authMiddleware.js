@@ -15,7 +15,6 @@ const authMiddleware = (req, res, next) => {
         req.ISAUTH = true;
     }
     catch (error) {
-        console.log(error);
         req.ISAUTH = false;
     }
     finally {
