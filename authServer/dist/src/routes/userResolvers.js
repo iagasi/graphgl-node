@@ -24,6 +24,8 @@ exports.resolvers = {
             if (context.req.ISAUTH) {
                 return UserService_1.default.getAllUsers();
             }
+            else
+                throw new Error("Unathorized!");
         }
     },
     Mutation: {

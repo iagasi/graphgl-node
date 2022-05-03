@@ -18,7 +18,8 @@ export const resolvers = {
               return UserService.getAllUsers()
 
       }
-      
+      else throw new Error("Unathorized!")
+     
 
     }
   },

@@ -8,6 +8,9 @@ import { GlobalContextProvider } from './context/globalContext';
 import { SubscriptionClient } from 'subscriptions-transport-ws'
 import { WebSocketLink } from '@apollo/client/link/ws'
 import { setContext } from '@apollo/client/link/context';
+import { onError } from "@apollo/client/link/error";
+
+
 
 
 const httpLink=createHttpLink({
@@ -24,8 +27,14 @@ const authLink = setContext((_, { headers }) => {
     }
   }
 });
+
+
+
+const link=authLink.concat(httpLink)
+
+
 const client=new ApolloClient({
-link:authLink.concat(httpLink),
+link,
   //uri:'http://localhost:5000/graphql',
   cache:new InMemoryCache()
 })
