@@ -13,7 +13,7 @@ import cors from "cors"
 import { typeDefs } from "./graphSchema"
 import { resolvers } from "./routes/userResolvers"
 import authMiddleware from "./middlewarres/authMiddleware";
-const corsConfig={
+const corsConfig = {
   credentials: true,
   origin: "http://localhost:3000",
 }
@@ -32,7 +32,7 @@ app.use(authMiddleware)
 
   const server = new ApolloServer({
     schema,
-    context: ({ req, res,next }: any) => ({ req, res }),
+    context: ({ req, res, next }: any) => ({ req, res }),
 
   });
 
@@ -62,11 +62,12 @@ app.use(authMiddleware)
 
   await server.start();
   server.applyMiddleware({
-    app,cors: {
+    app, cors: {
       credentials: true,
       origin: "http://localhost:3000",
       exposedHeaders: ["Set-Cookie", "connection"]
-    }})
+    }
+  })
   //
   httpServer.listen(5000, () => console.log(`🚀 Server ready at http://localhost:5000${server.graphqlPath}`));
 

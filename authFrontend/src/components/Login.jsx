@@ -1,17 +1,15 @@
-import { useMutation, useQuery, useSubscription } from '@apollo/client'
+import { useMutation, } from '@apollo/client'
 import jwtDecode from 'jwt-decode'
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useState } from 'react'
-import { useRef } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { UserStateValue } from '../context/globalContext'
 import { LoginAction } from '../context/userActions'
 import "../css/auth.css"
 import { LOGIN } from '../http/login'
-import { GETALL, ONADDUSER } from '../http/Users'
 
 function Login() {
-    const { user, dispatch } = UserStateValue()
+    const {  dispatch } = UserStateValue()
    
 
     const navigate = useNavigate()
@@ -47,6 +45,8 @@ function Login() {
         console.log(decoded)
         dispatch(LoginAction(decoded))
         navigate("/user")
+        window.location.reload();
+
     }
     return (
         <div className='auth'>

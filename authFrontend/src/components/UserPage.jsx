@@ -44,7 +44,10 @@ useEffect(()=>{
 
   const logOutHandler = () => {
     localStorage.removeItem("acessToken")
+    
     nav("/")
+    window.location.reload();
+
   }
 
   if (loading) return 'Loading...';

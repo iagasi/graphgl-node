@@ -9,8 +9,6 @@ const authMiddleware = (req, res, next) => {
     try {
         const acessToken = (_a = req.headers.authorization) === null || _a === void 0 ? void 0 : _a.split("Bearer")[1];
         const cookie = req.cookies.refreshToken;
-        if (!acessToken || cookie) {
-        }
         const isAuthorized = TokenService_1.default.guard(acessToken, cookie);
         req.ISAUTH = true;
     }
@@ -18,7 +16,7 @@ const authMiddleware = (req, res, next) => {
         req.ISAUTH = false;
     }
     finally {
-        next();
+        return next();
         //
     }
 };

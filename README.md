@@ -1,5 +1,6 @@
 # How start App
 Make git clone
+</br>
 Go to authFrontend Directory run command npm install   then()  npm start
 
 Go to authServer Directory run command npm install   then()  npm run dev
